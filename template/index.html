@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head><title> 运营周报 </title></head>
+    <body>
+        <table>
+            {% for i in range(file.shape[1]) %}
+                <td>{% raw file.columns[i] %}</td>
+            {%end%}
+
+            {% for i in range(file.shape[0]) %}
+            <tr>
+                {% for j in range(file.shape[1]) %}
+                    <td>{% raw file.iloc[i,j] %}</td>
+                {%end%}
+            </tr>
+            {%end%}
+        </table>
+    </body>
+</html>
